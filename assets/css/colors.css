@@ -1,0 +1,26 @@
+:root {
+	/* Base colors */
+
+	/* --eco-wallpaper: #334433; */
+	--eco-wallpaper: #c8ffc8;
+
+	--eco-green: #71c79c;
+	--eco-orange: #f08080;
+	--eco-blue: #6495ed;
+	--eco-red: #f32c61;
+	--eco-white: #f0fff0;
+
+	/*         Dark variants        */
+	/*  Dark white just means gray. */
+	/*    I know. Relax about it.   */
+	--eco-dark-red: #c70c3e;
+	--eco-dark-green: #42986e;
+	--eco-dark-orange: #ce6244;
+	--eco-dark-blue: #2164df;
+	--eco-dark-white: #dce9e9;
+
+
+	/* Dynamic (transparent) rendering */
+	--darker-than-back: #00000030;
+	--lighter-than-back: #ffffff30;
+}

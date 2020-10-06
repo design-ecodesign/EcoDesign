@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Stuff in the tabs -->
+		<title>Shop | EcoDesign</title>
+		<link rel="shortcut icon" href="assets/images/icons/favicon.png" type="image/x-icon">
+
+		<!-- Fonts -->
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> -->
+
+		<!-- External JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+		<!-- External CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<!-- Local CSS -->
+		<link rel="stylesheet" href="assets/css/colors.css">
+		<link rel="stylesheet" href="assets/css/header-footer.css">
+		<link rel="stylesheet" href="assets/css/preloader.css">
+		<link rel="stylesheet" href="assets/css/shop.css">
+		<!-- <link rel="stylesheet" href="assets/css/hover.css"> -->
+	</head>
+
+	<body data-barba="container">
+		<!-- PreLoader -->
+		<div class="preloader">
+			<div class="preloader-inner">
+				<div class="preloader-icon">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Preloading script -->
+		<script>window.onload = function(){$('.preloader').delay(1000).fadeOut('slow');}</script>
+
+		<button id="reload-css" class="light">
+			<img src="assets/images/icons/dark-mode.png">
+		</button>
+
+		<!-- <div id="null-buffer"></div> -->
+
+		<!-- Top stuff -->
+		<section class="heading center out-of-view">
+			<!-- Logo & slogan -->
+			<a class="logo graphic center" href="index.html"></a>
+			<div id="slogan" class="center">Go Go Eco!</div>
+			<a class="logo company-name" href="index.html">EcoDesign</div>
+
+			<hr>
+
+			<!-- Site navigation -->
+			<div id="navigation">
+				<div id="in-site-navigation" class="nav-group">
+					<a class="nav-link in-site" href="index.html">Home</a>
+					<a class="nav-link in-site" href="blog.html">Blog</a>
+					<a class="nav-link in-site" href="shop.html">Shop</a>
+				</div>
+
+				<!-- Social media -->
+				<!-- design.ecodesign@gmail.com -->
+				<!-- paypal.me/gogoeco -->
+				<div id="social-media" class="nav-group">
+					<a id="youtube" style="border-radius: 15px;" href="https://www.youtube.com/channel/UCBq7Vj8wKnc36KfAsHCUmCA" class="nav-link redirect">
+						<img src="assets/images/icons/Youtube-512.png">
+						<span>YouTube</span>
+					</a>
+
+					<a id="instagram" style="border-radius: 8px;" href="https://www.instagram.com/design.ecodesign/" class="nav-link redirect">
+						<img src="assets/images/icons/Instagram-512.png">
+						<span>Instagram</span>
+					</a>
+
+					<a id="tiktok" style="border-radius: 15px;" href="https://vm.tiktok.com/tw8gLR/" class="nav-link redirect">
+						<img src="assets/images/icons/tiktok-512.png">
+						<span>TikTok</span>
+					</a>
+				</div>
+			</div>
+
+			<script></script>
+		</section>
+
+		<!-- The cart -->
+		<div id="the-cart">
+			<button id="cart-button" onclick="toggleCart();" value="closed">
+				<img src="assets/images/icons/cart-512.png"/>
+			</button>
+			<div id="cart-badge"></div>
+
+			<div id="cart-content"></div>
+		</div>
+
+		<!-- Products for sale -->
+		<section id="shopping"></section>
+
+		<!-- External JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+				integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+				crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+				integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+				crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin="anonymous"></script>
+
+		<!-- Local JavaScript -->
+		<!-- <script src="assets/js/header.js"></script> -->
+		<script src="assets/js/shop-mk2-dist.js"></script>
+		<script src="assets/js/theme-handler.js"></script>
+	</body>
+
+	<footer class="center">
+		<span class="copyright">©2020 by EcoDesign</span>
+	</footer>
+</html>

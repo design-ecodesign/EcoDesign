@@ -1,0 +1,49 @@
+{
+	"Products": [
+		{
+			"Name": "Flower Girl",
+			"Price": "$15.00",
+			"Description": ["In support of Black Lives Matter", "Made with watercolors and string", "8\" x 10\" canvas"],
+			"Images": [
+				"https://drive.google.com/file/d/1PgPkNucAZNlGGwTtO_EwAe4VJkq9rLSf/view?usp=sharing",
+				"https://drive.google.com/file/d/11HwsE0QV3nXGF3qAApD2_qlo7PWA24w-/view?usp=sharing"
+			]
+		},
+		{
+			"Name": "Flower Pot",
+			"Price": "$15.00",
+			"Description": ["Made with acryllic paint, thread, and plaster pain", "Brings vibrancy and joy to your home!", "8\" x 10\" canvas"],
+			"Images": [
+				"https://drive.google.com/file/d/1wTiW-OBkTZdr8AQcnZvd3QUdOF8MnC9D/view?usp=sharing",
+				"https://drive.google.com/file/d/1vFZgyxE4l0uE57PbB95E67XnT77GRDYA/view?usp=sharing"
+			]
+		},
+		{
+			"Name": "Indian Decorative Pillow",
+			"Price": "$15.00",
+			"Description": ["Made with Indian veil and cloth", "Brings Indian culture and vibrancy to your home!", "20\" x 20\""],
+			"Images": [
+				"https://drive.google.com/file/d/1OOA_ttaJoC9TtgZueqfvU2IRFnbkW5ZQ/view?usp=sharing",
+				"https://drive.google.com/file/d/1Fd5N9QeKEndEjhYrNpl07M0yvLhfjm_W/view?usp=sharing"
+			]
+		},
+		{
+			"Name": "Rose Petal Dress",
+			"Price": "$15.00",
+			"Description": ["Made with water color paint, velvet fabric, and ribbons", "8\" x 10\" canvas"],
+			"Images": [
+				"https://drive.google.com/file/d/1WWGbM8hTY4ErQxugPik7b9gQ6IH5t-hC/view?usp=sharing",
+				"https://drive.google.com/file/d/1lyDY0KRmsV4ZtzqaVyHA-0lWLO6BJcJG/view?usp=sharing"
+			]
+		},
+		{
+			"Name": "Ribbon Girl",
+			"Price": "$15.00",
+			"Description": ["Made with water color paint, string, and ribbons", "8\" x 10\" canvas"],
+			"Images": [
+				"https://drive.google.com/file/d/1dcP84V-XBxa6yIewk7DI6wu2TXcGRTp_/view?usp=sharing",
+				"https://drive.google.com/file/d/1lgw7ENnHDj7jcV6e0WJSUfRgUj8WhVz3/view?usp=sharing"
+			]
+		}
+	]
+}

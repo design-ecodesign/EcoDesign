@@ -1,0 +1,178 @@
+/*
+* * * * * * * * * * * *
+*                     *
+*  Part of EcoDesign  *
+*                     *
+* * * * * * * * * * * *
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+
+@import url('colors.css');
+
+@keyframes drawBorder {
+	0% {
+		border: transparent;
+	}
+
+	30% {
+		border: var(--eco-dark-red) transparent transparent transparent;
+	}
+
+	60% {
+		border: var(--eco-dark-red) var(--eco-dark-red) var(--eco-dark-red) transparent;
+	}
+
+	90% {
+		border: var(--eco-dark-red)
+	}
+}
+
+#heading-wrapper {
+	/* animation: 3s drawBorder linear forwards; */
+	/* animation-delay: 2s; */
+	transition: all 1s;
+	padding: 2%;
+	margin-bottom: 2%;
+	margin-top: 2%;
+	border: solid 4px transparent;
+	/* transform: perspective(1px) translateZ(0); */
+	width: max-content;
+	/* animation: 1s ease-out 0s 1 drawBorder; */
+}
+
+#who-we-are {
+	text-align: center;
+	background-color: var(--eco-green);
+	padding: 2%;
+	padding-left: 20%;
+	position: relative;
+}
+	#who-we-are > div {
+		display: inline-block;
+	}
+	#the-team {
+		overflow: hidden;
+		border-radius: 20px;
+		border: solid 5px var(--eco-dark-green);
+		width: 500px;
+		height: 800px;
+		z-index: 1;
+	}
+	#who-we-are .text-island {
+		color: var(--eco-white);
+		position: absolute;
+		padding: .5em;
+		font-weight: 500;
+		font-size: 25px;
+		z-index: 2;
+		top: 180px;
+		left: 12%;
+		width: 27em;
+		border-radius: 15px;
+		background-color: var(--eco-dark-green);
+	}
+
+/* #instagram-feed {
+	background-color: antiquewhite;
+	padding: 2%;
+}
+	#instagram-feed h3 {
+		font-size: 50px;
+		font-family: 'Montserrat', sans-serif;
+		color: var(--eco-dark-green);
+		padding: .8%;
+	}
+	#instagram-feed .content {
+		border-radius: 15px;
+		width: 100%;
+		height: 100%;
+		padding: 2%;
+	} */
+
+.wip {
+	background-color: rosybrown;
+	padding: 10%;
+	text-align: center;
+	font-size: 25px;
+}
+.wip div {
+	font-size: 75px;
+}
+
+.eapps-instagram-feed-posts-item-template-classic {
+	border-radius: 15px;
+	border: solid saddlebrown;
+}
+
+.eapps-instagram-feed-posts-item-text,
+.eapps-instagram-feed-posts-item-date {
+	font-weight: bold;
+}
+
+.eapps-instagram-feed-posts-item-image {
+	border-radius: 15px;
+}
+
+#what-we-do {
+	background-color: rgb(241, 228, 182);
+	padding: 2%;
+}
+	#what-we-do #we-do {
+		background-color: var(--eco-dark-green);
+		color: var(--eco-white);
+		width: 56%;
+		border-radius: 15px;
+		font-size: x-large;
+		font-weight: 500;
+		padding: 1.3%;
+		text-align: left;
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+		#what-we-do #we-do h3 {
+			font-family: 'Ubuntu', sans-serif;
+			font-size: xx-large;
+			color: inherit;
+		}
+
+#get-in-touch {
+	padding-top: 6%;
+	/* align-content: center; */
+}
+	#get-in-touch form {
+		background-color: var(--eco-green);
+		border-radius: 15px;
+		box-shadow: 1px 1px 3px darkslategray;
+		width: fit-content;
+		padding: 20px;
+	}
+	#get-in-touch input,
+	#get-in-touch textarea {
+		transition: all .3s;
+		display: block;
+		background-color: var(--darker-than-back);
+		color: var(--eco-white);
+		padding: 10px;
+		width: 50rem;
+		margin-bottom: 4px;
+		font-size: 20px;
+		outline: none;
+		border-color: transparent transparent var(--eco-dark-green) transparent;
+	}
+	#get-in-touch input::placeholder,
+	#get-in-touch textarea::placeholder {
+		color: azure;
+	}
+
+.pair {
+	display: inline-block;
+}
+
+#how-to-reach {
+	background-color: var(--eco-green);
+	color: var(--eco-dark-green);
+	font-size: 45px;
+	font-family: 'Ubuntu', 'sans-serif';
+	padding-bottom: 1%;
+}
