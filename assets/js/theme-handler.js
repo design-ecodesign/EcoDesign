@@ -104,5 +104,10 @@ themeSwitch.addEventListener(
 				break;
 		}
 
+		localStorage.setItem("theme", themeSwitch.className);
 	}
 );
+
+if (localStorage.getItem("theme") === "dark") {
+	$("#reload-css").click();
+}

@@ -8,37 +8,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu');
 
-/* @import url('colors.css'); */
-
-@keyframes drawBorder {
-	0% {
-		border: transparent;
-	}
-
-	30% {
-		border: var(--eco-dark-red) transparent transparent transparent;
-	}
-
-	60% {
-		border: var(--eco-dark-red) var(--eco-dark-red) var(--eco-dark-red) transparent;
-	}
-
-	90% {
-		border: var(--eco-dark-red)
-	}
-}
-
 #heading-wrapper {
-	/* animation: 3s drawBorder linear forwards; */
-	/* animation-delay: 2s; */
 	transition: all 1s;
 	padding: 2%;
 	margin-bottom: 2%;
 	margin-top: 2%;
 	border: solid 4px transparent;
-	/* transform: perspective(1px) translateZ(0); */
 	width: max-content;
-	/* animation: 1s ease-out 0s 1 drawBorder; */
 }
 
 #who-we-are {
@@ -138,7 +114,6 @@
 
 #get-in-touch {
 	padding-top: 6%;
-	/* align-content: center; */
 }
 	#get-in-touch form {
 		background-color: var(--eco-green);
