@@ -18,17 +18,17 @@ const lightColors = {
 };
 
 const darkColors = {
-	"eco-wallpaper": "#c8ffc8",
+	"eco-wallpaper": "#383838",
 
 	"eco-red": "#f32c61",
-	"eco-green": "#71c79c",
-	"eco-orange": "#f88a6c",
+	"eco-green": "#4d8468",
+	"eco-orange": "#f55023",
 	"eco-blue": "#6495ed",
 	"eco-white": "#f0fff0",
 
 	"eco-dark-red": "#c70c3e",
-	"eco-dark-green": "#42986e",
-	"eco-dark-orange": "#ce6244",
+	"eco-dark-green": "#4f6d5e",
+	"eco-dark-orange": "#ca5c3f",
 	"eco-dark-blue": "#2164df",
 	"eco-dark-white": "#dce9e9",
 
@@ -38,7 +38,7 @@ const darkColors = {
 
 const colorPairs = {
 	"wallpaper": ["#c8ffc8", "#282828"],
-	"red": ["#f32c61", "#c70c3e"], 
+	"red": ["#f32c61", "#c70c3e"],
 	"green": ["#71c79c", "#21533a"],
 	"blue": ["#6495ed", "#2164df"],
 	"orange": ["#f88a6c", "#f55023"],
@@ -83,12 +83,12 @@ themeSwitch.addEventListener(
 		`;
 		switch (themeSwitch.className) {
 			case "dark":
-				console.log("Is dark, switch to light");
+				// console.log("Is dark, switch to light");
 				themeSwitch.firstElementChild.src = "assets/images/icons/dark-mode.png";
 				themeSwitch.className = "light";
 				break;
 			case "light":
-				console.log("Is light, switch to dark");
+				// console.log("Is light, switch to dark");
 				themeSwitch.firstElementChild.src = "assets/images/icons/light-mode.png";
 				themeSwitch.className = "dark";
 				themeSwitch.style.boxShadow = "1px 1px 3px white";
