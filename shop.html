@@ -20,14 +20,24 @@
 			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 		<!-- Local CSS -->
-		<link rel="stylesheet" href="assets/css/light-mode.css">
-		<link rel="stylesheet" href="assets/css/header-footer.css">
-		<link rel="stylesheet" href="assets/css/preloader.css">
+		<link rel="stylesheet" href="assets/css/colors.css">
+		<link rel="stylesheet" href="assets/css/main.css">
+		<!-- <link rel="stylesheet" href="assets/css/preloader.css"> -->
 		<link rel="stylesheet" href="assets/css/shop.css">
 		<!-- <link rel="stylesheet" href="assets/css/hover.css"> -->
 	</head>
 
 	<body data-barba="container">
+		<button id="reload-css" class="light">
+			<img src="assets/images/icons/dark-mode.png">
+		</button>
+
+		<script>
+			if (localStorage.getItem("theme") === "dark") {
+				$("#reload-css").click();
+			}
+		</script>
+
 		<!-- PreLoader -->
 		<div class="preloader">
 			<div class="preloader-inner">
@@ -40,10 +50,6 @@
 
 		<!-- Preloading script -->
 		<script>window.onload = function(){$('.preloader').delay(1000).fadeOut('slow');}</script>
-
-		<button id="reload-css" class="light">
-			<img src="assets/images/icons/dark-mode.png">
-		</button>
 
 		<!-- <div id="null-buffer"></div> -->
 
@@ -94,7 +100,6 @@
 				<img src="assets/images/icons/cart-512.png"/>
 			</button>
 			<div id="cart-badge"></div>
-
 			<div id="cart-content"></div>
 		</div>
 

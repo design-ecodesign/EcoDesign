@@ -11,22 +11,31 @@
 		<!-- External JavaScript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-		<!-- Internal JavaScript -->
-		<!-- <script>document.getElementsByTagName("html")[0].className += " js";</script> -->
-
 		<!-- External CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 		<!-- Local CSS -->
+		<link rel="stylesheet" href="assets/css/animations.css">
 		<link rel="stylesheet" href="assets/css/light-mode.css">
 		<link rel="stylesheet" href="assets/css/header-footer.css">
 		<link rel="stylesheet" href="assets/css/index.css">
 		<link rel="stylesheet" href="assets/css/preloader.css">
 		<!-- <link rel="stylesheet" href="assets/css/instagram.css"> -->
-		<link rel="stylesheet" href="assets/css/animations.css">
 	</head>
 
 	<body data-barba="container">
+
+		<!-- Dark/Light Mode -->
+		<button id="reload-css" class="light">
+			<img src="assets/images/icons/dark-mode.png">
+		</button>
+
+		<script>
+			if (localStorage.getItem("theme") === "dark") {
+				$("#reload-css").click();
+			}
+		</script>
+
 		<!-- PreLoader -->
 		<div class="preloader">
 			<div class="preloader-inner">
@@ -40,10 +49,6 @@
 		<script>
 			window.onload = function(){$('.preloader').delay(500).fadeOut('slow');}
 		</script>
-
-		<button id="reload-css" class="light">
-			<img src="assets/images/icons/dark-mode.png">
-		</button>
 
 		<div id="null-buffer"></div>
 

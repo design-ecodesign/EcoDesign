@@ -135,10 +135,10 @@
 		outline: none;
 		border-color: transparent transparent var(--eco-dark-green) transparent;
 	}
-	#get-in-touch input::placeholder,
-	#get-in-touch textarea::placeholder {
-		color: azure;
-	}
+		#get-in-touch input::placeholder,
+		#get-in-touch textarea::placeholder {
+			color: azure;
+		}
 
 .pair {
 	display: inline-block;
