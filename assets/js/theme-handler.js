@@ -120,4 +120,4 @@ themeSwitch.addEventListener(
 	}
 );
 
-console.log("Loaded theme engine");
+// console.log("Loaded theme engine");
