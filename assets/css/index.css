@@ -18,7 +18,8 @@
 }
 
 #we-are-blob {
-	background-color: black;
+	/* background-color: black; */
+	margin-top: 2%;
 	width: 100%;
 }
 
@@ -26,8 +27,8 @@
 	position: relative;
 	text-align: center;
 	background-color: var(--eco-green);
-	padding: 2%;
-	padding-left: 20%;
+	/* padding: 2%; */
+	/* padding-left: 20%; */
 }
 	#who-we-are > div {
 		display: inline-block;
@@ -151,7 +152,7 @@
 
 #how-to-reach {
 	background-color: var(--eco-green);
-	color: var(--eco-dark-green);
+	color: var(--eco-white);
 	font-size: 45px;
 	font-family: 'Ubuntu', 'sans-serif';
 	padding-bottom: 1%;
