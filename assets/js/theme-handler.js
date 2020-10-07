@@ -1,4 +1,4 @@
-const lightColors = {
+const lightMode = {
 	"wallpaper": "#c8ffc8",
 
 	"red": "#f32c61",
@@ -13,11 +13,11 @@ const lightColors = {
 	"dark_blue": "#2164df",
 	"dark_white": "#dce9e9",
 
-	"darker-than-back": "#00000030",
-	"lighter-than-back": "#ffffff30"
+	"darker_than_back": "#00000030",
+	"lighter_than_back": "#ffffff30"
 };
 
-const darkColors = {
+const darkMode = {
 	"wallpaper": "#383838",
 
 	"red": "#f32c61",
@@ -32,24 +32,28 @@ const darkColors = {
 	"dark_blue": "#2164df",
 	"dark_white": "#dce9e9",
 
-	"darker-than-back": "#ffffff30",
-	"lighter-than-back": "#00000030"
+	"darker_than_back": "#ffffff30",
+	"lighter_than_back": "#00000030"
 }
 
-document.body.style = `
-	--eco-wallpaper: ${lightColors.wallpaper};
-	--eco-red: ${lightColors.red};
-	--eco-orange: ${lightColors.orange};
-	--eco-green: ${lightColors.green};
-	--eco-blue: ${lightColors.blue};
-	--eco-white: ${lightColors.white};
+// document.body.style = `
+// 	--eco-wallpaper: ${lightColors.wallpaper};
 
-	--eco-dark-red: ${lightColors.dark_red};
-	--eco-dark-orange: ${lightColors.dark_orange};
-	--eco-dark-green: ${lightColors.dark_green};
-	--eco-dark-blue: ${lightColors.dark_blue};
-	--eco-dark-white: ${lightColors.dark_white};
-`;
+// 	--eco-red: ${lightColors.red};
+// 	--eco-orange: ${lightColors.orange};
+// 	--eco-green: ${lightColors.green};
+// 	--eco-blue: ${lightColors.blue};
+// 	--eco-white: ${lightColors.white};
+
+// 	--eco-dark-red: ${lightColors.dark_red};
+// 	--eco-dark-orange: ${lightColors.dark_orange};
+// 	--eco-dark-green: ${lightColors.dark_green};
+// 	--eco-dark-blue: ${lightColors.dark_blue};
+// 	--eco-dark-white: ${lightColors.dark_white};
+
+// 	// --darker-than-back: ${lightColors.lighter_than_back};
+// 	// --lighter-than-back: ${lightColors.darker_than_back};
+// `;
 
 
 function reloadCSS() {
@@ -70,34 +74,35 @@ let themeSwitch = document.getElementById('reload-css');
 themeSwitch.addEventListener(
 	"click",
 	() => {
-		var colorSpace;
+		// var colorSpace;
 		switch (themeSwitch.className) {
 			case "dark":
 				themeSwitch.firstElementChild.src = "assets/images/icons/dark-mode.png";
 				themeSwitch.className = "light";
-				colorSpace = lightColors;
+				// colorSpace = lightColors;
+				document.body.style = "";
 				break;
 			case "light":
 				themeSwitch.firstElementChild.src = "assets/images/icons/light-mode.png";
 				themeSwitch.className = "dark";
 				themeSwitch.style.boxShadow = "1px 1px 3px white";
-				colorSpace = darkColors;
+				// colorSpace = darkColors;
+				document.body.style = `
+					--eco-wallpaper: ${darkMode.wallpaper} !important;
+					--eco-red: ${darkMode.red} !important;
+					--eco-orange: ${darkMode.orange} !important;
+					--eco-green: ${darkMode.green} !important;
+					--eco-blue: ${darkMode.blue} !important;
+					--eco-white: ${darkMode.white} !important;
+
+					--eco-dark-red: ${darkMode.dark_red} !important;
+					--eco-dark-orange: ${darkMode.dark_orange} !important;
+					--eco-dark-green: ${darkMode.dark_green} !important;
+					--eco-dark-blue: ${darkMode.dark_blue} !important;
+					--eco-dark-white: ${darkMode.dark_white} !important;
+				`;
 				break;
 		}
 
-		document.body.style = `
-			--eco-wallpaper: ${colorSpace.wallpaper};
-			--eco-red: ${colorSpace.red};
-			--eco-orange: ${colorSpace.orange};
-			--eco-green: ${colorSpace.green};
-			--eco-blue: ${colorSpace.blue};
-			--eco-white: ${colorSpace.white};
-
-			--eco-dark-red: ${colorSpace.dark_red};
-			--eco-dark-orange: ${colorSpace.dark_orange};
-			--eco-dark-green: ${colorSpace.dark_green};
-			--eco-dark-blue: ${colorSpace.dark_blue};
-			--eco-dark-white: ${colorSpace.dark_white};
-		`;
 	}
 );

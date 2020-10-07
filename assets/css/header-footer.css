@@ -24,6 +24,7 @@
 }
 
 body {
+	transition: all .25s;
 	background: var(--eco-wallpaper);
 }
 
