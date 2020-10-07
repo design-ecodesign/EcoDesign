@@ -105,5 +105,10 @@ themeSwitch.addEventListener(
 		}
 
 		localStorage.setItem("theme", themeSwitch.className);
+		// console.log(localStorage);
 	}
 );
+
+if (localStorage.getItem("theme") == "dark") {
+	$("#reload-css").click();
+}
