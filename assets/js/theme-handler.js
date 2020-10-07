@@ -51,16 +51,6 @@ document.body.style = `
 	--eco-dark-white: ${lightColors.dark_white};
 `;
 
-// const colorPairs = {
-// 	"wallpaper": ["#c8ffc8", "#282828"],
-// 	"red": ["#f32c61", "#c70c3e"],
-// 	"green": ["#71c79c", "#21533a"],
-// 	"blue": ["#6495ed", "#2164df"],
-// 	"orange": ["#f88a6c", "#f55023"],
-// 	"white": ["#f0fff0", "#dce9e9"]
-// }
-
-// console.log(document.styleSheets);
 
 function reloadCSS() {
 	$("link").each(function() {
@@ -76,23 +66,18 @@ function reloadCSS() {
 }
 
 let themeSwitch = document.getElementById('reload-css');
-// console.log(themeSwitch.firstElementChild);
-// console.log(themeSwitch.style);
 
 themeSwitch.addEventListener(
 	"click",
 	() => {
-		// console.log(themeSwitch.className);
 		var colorSpace;
 		switch (themeSwitch.className) {
 			case "dark":
-				// console.log("Is dark, switch to light");
 				themeSwitch.firstElementChild.src = "assets/images/icons/dark-mode.png";
 				themeSwitch.className = "light";
 				colorSpace = lightColors;
 				break;
 			case "light":
-				// console.log("Is light, switch to dark");
 				themeSwitch.firstElementChild.src = "assets/images/icons/light-mode.png";
 				themeSwitch.className = "dark";
 				themeSwitch.style.boxShadow = "1px 1px 3px white";
@@ -114,10 +99,5 @@ themeSwitch.addEventListener(
 			--eco-dark-blue: ${colorSpace.dark_blue};
 			--eco-dark-white: ${colorSpace.dark_white};
 		`;
-
-		// console.log(themeSwitch.firstElementChild);
-		// reloadCSS();
 	}
 );
-
-// console.log("Loaded theme engine");
