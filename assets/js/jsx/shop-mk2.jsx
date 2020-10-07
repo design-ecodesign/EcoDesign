@@ -54,6 +54,8 @@ function showToolTip() {
 
 	$("#cart-tooltip").fadeIn(500);
 	$("#cart-tooltip").delay(1500).fadeOut(500);
+
+	firstItemAdded = true;
 }
 
 function renderCart() {
@@ -274,7 +276,7 @@ class ProductContainer extends React.Component {
 
 		if (cartButton.value == "closed" && !firstItemAdded) {
 			showToolTip();
-			firstItemAdded = true;
+			// firstItemAdded = true;
 		}
 	}
 
@@ -360,7 +362,6 @@ class Inventory extends React.Component {
 		return React.createElement("div", {id: "inventory"}, ...elements);
 	}
 }
-
 
 (function () {
 	document.cookie = "SameSite=None; Secure";
