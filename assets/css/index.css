@@ -17,12 +17,17 @@
 	width: max-content;
 }
 
+#we-are-blob {
+	background-color: black;
+	width: 100%;
+}
+
 #who-we-are {
+	position: relative;
 	text-align: center;
 	background-color: var(--eco-green);
 	padding: 2%;
 	padding-left: 20%;
-	position: relative;
 }
 	#who-we-are > div {
 		display: inline-block;
@@ -42,8 +47,8 @@
 		font-weight: 500;
 		font-size: 25px;
 		z-index: 2;
-		top: 180px;
-		left: 12%;
+		/* top: 180px; */
+		/* left: 12%; */
 		width: 27em;
 		border-radius: 15px;
 		background-color: var(--eco-dark-green);
