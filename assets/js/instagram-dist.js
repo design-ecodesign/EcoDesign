@@ -4,17 +4,13 @@ var jsonData;
 var instagramData = [];
 
 class ImageCarousel extends React.Component {
-	// constructor(props) {
-	// 	super(props);
-	// }
 	render() {
 		var images = [];
-		var indicators = []; // const regex = /file[/]d[/](.+)[/]/;
+		var indicators = [];
 
 		const carouselID = `${this.props.itemName.toLowerCase().replaceAll(" ", "-")}-carousel`;
 
 		for (const [i, url] of this.props.itemImages.entries()) {
-			// const fileID = url.match(regex)[1];
 			images.push( React.createElement("div", {
 				className: `carousel-item ${i == 0 ? "active" : ""}`
 			}, React.createElement("img", {
@@ -33,6 +29,7 @@ class ImageCarousel extends React.Component {
 		const carouselIndicators = React.createElement("ul", {
 			className: "carousel-indicators"
 		}, ...indicators);
+
 		return React.createElement("div", {
 			id: carouselID,
 			className: "carousel slide",
@@ -51,7 +48,6 @@ class ImageCarousel extends React.Component {
 			className: "carousel-control-next-icon"
 		})));
 	}
-
 }
 
 (function () {
@@ -60,7 +56,7 @@ class ImageCarousel extends React.Component {
 	xmlhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
 			jsonData = JSON.parse(this.responseText);
-			jsonData.graphql.user.edge_owner_to_timeline_media.edges.forEach(element => {
+			jsonData.graphql.user.edge_owner_to_timeline_media.edges.slice(0,4).forEach(element => {
 				let display_urls = element.node.edge_sidecar_to_children.edges.map(_e => _e.node.display_url);
 				instagramData.push(
 					React.createElement(
@@ -82,5 +78,4 @@ class ImageCarousel extends React.Component {
 
 	xmlhttp.open("GET", "https://www.instagram.com/design.ecodesign/?__a=1", true);
 	xmlhttp.send();
-	// console.log(instagramData);
 })();

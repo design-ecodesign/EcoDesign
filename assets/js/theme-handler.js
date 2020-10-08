@@ -105,6 +105,7 @@ themeSwitch.addEventListener(
 		}
 
 		localStorage.setItem("theme", themeSwitch.className);
+		reloadCSS();
 		// console.log(localStorage);
 	}
 );
