@@ -18,6 +18,9 @@ body {
 	transition: all .25s;
 	background: var(--eco-wallpaper);
 }
+	body * {
+		transition: all .25s;
+	}
 
 h1 {
 	color: #dd390a;
