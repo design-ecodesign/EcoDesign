@@ -12,19 +12,19 @@ class InstagramPostCarousel extends React.Component {
 		// children.push();
 
 		// console.log(this.props.content);
-		for (const data of this.props.content) {
+		for (const [i, data] of this.props.content.entries()) {
 			// console.log(data);
 			if (data[1]) {
 				children.push(
-					<video className="content" controls>
+					<video muted style={{display: i == this.props.activeView ? "inline-block" : "none"}} className="content" controls>
 						<source src={data[0]}/>
 					</video>
 				);
 			} else {
-				let url = data[0];
+				// let url = data[0];
 				// console.log(url);
 				children.push(
-					<img className="content" src={url}/>
+					<img style={{display: i == this.props.activeView ? "inline-block" : "none"}} className="content" src={data[0]}/>
 				);
 			}
 			// break;
@@ -38,28 +38,36 @@ class InstagramPost extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {current: 0};
-		this.content = this.props.content;
+		// this.content = this.props.content;
 		this.switchView = this.switchView.bind(this);
 	}
 
 	switchView(direction) {
+		console.log(`Rendering at position ${this.state.current} of ${this.props.content.length}`);
 		if (direction == -1) {
-			// this.content = this.content.concat(this.content.splice(0,1));
-			return false;
+			if (this.state.current == 0) {
+				// console.log("r u dumb");
+				return;
+			}
+			// this.content = this.content.slice(0,1).concat(this.content.slice(1, this.content.length));
+			// return false;
 		} else if (direction == 1) {
-			return true;
-			// this.content = this.content.concat(this.content.splice(0,1));
+			if (this.state.current == this.props.content.length-1) {
+				// console.log("r u dumb");
+				return;
+			}
+			// this.content = this.content.slice(this.content.length-1,this.content.length).concat(0, this.content.length-1);
+			// return true;
 		}
 		this.setState({current: this.state.current + direction});
 	}
 
 	render() {
-		console.log(`Rendering at position ${this.state.current} of ${this.props.content.length}`);
 		return (
 			<div className="instagram-post">
 				<img className="arrow next" onClick={() => this.switchView(1)} src="assets/images/icons/arrow.png"/>
 				<img className="arrow back" onClick={() => this.switchView(-1)} src="assets/images/icons/arrow.png"/>
-				<InstagramPostCarousel content={this.props.content}></InstagramPostCarousel>
+				<InstagramPostCarousel activeView={this.state.current} content={this.props.content}></InstagramPostCarousel>
 				<span className="instagram-post-date">PLACEHOLDER</span>
 			</div>
 		);
