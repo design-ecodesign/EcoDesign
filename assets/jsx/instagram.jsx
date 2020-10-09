@@ -5,40 +5,11 @@ var instagramData = [];
 
 
 // Because Bootstrap's carousel wasn't good enough
-class PostCarousel extends React.Component {
-	constructor(props) {
-		super(props);
-		// this.current = 0;
-		this.state = {current: 2};
-		this.switchView = this.switchView.bind(this);
-	}
-
-	switchView(direction) {
-		// this.current += direction;
-		this.setState({current: this.state.current+direction});
-
-		// right now we only move one at a time (2 -> 3)
-		// maybe in the future we can jump 2 -> 5 or something
-		// if (direction == 0) {
-		// 	return "nothing to do";
-		// } else if (direction > 0) {
-		// 	current--;
-		// 	return true;
-		// } else if (direction < 0) {
-		// 	return false;
-		// }
-	}
-
+class InstagramPostCarousel extends React.Component {
 	render() {
-		console.log(`Rendering at position ${this.state.current}`);
 		let children = [];
-		children.push(
-			<img className="arrow next" onClick={() => this.switchView(1)} src="assets/images/icons/arrow.png"/>
-		);
-
-		children.push(
-			<img className="arrow back" onClick={() => this.switchView(-1)} src="assets/images/icons/arrow.png"/>
-		);
+		// children.push();
+		// children.push();
 
 		// console.log(this.props.content);
 		for (const data of this.props.content) {
@@ -64,10 +35,31 @@ class PostCarousel extends React.Component {
 }
 
 class InstagramPost extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {current: 0};
+		this.content = this.props.content;
+		this.switchView = this.switchView.bind(this);
+	}
+
+	switchView(direction) {
+		if (direction == -1) {
+			// this.content = this.content.concat(this.content.splice(0,1));
+			return false;
+		} else if (direction == 1) {
+			return true;
+			// this.content = this.content.concat(this.content.splice(0,1));
+		}
+		this.setState({current: this.state.current + direction});
+	}
+
 	render() {
+		console.log(`Rendering at position ${this.state.current} of ${this.props.content.length}`);
 		return (
 			<div className="instagram-post">
-				<PostCarousel content={this.props.content}></PostCarousel>
+				<img className="arrow next" onClick={() => this.switchView(1)} src="assets/images/icons/arrow.png"/>
+				<img className="arrow back" onClick={() => this.switchView(-1)} src="assets/images/icons/arrow.png"/>
+				<InstagramPostCarousel content={this.props.content}></InstagramPostCarousel>
 				<span className="instagram-post-date">PLACEHOLDER</span>
 			</div>
 		);
@@ -102,15 +94,6 @@ class InstagramViewport extends React.Component {
 
 				instagramData.push(
 					<InstagramPost content={urls}></InstagramPost>
-					// React.createElement(
-					// 	"div", {className: "instagram-island"},
-					// 	React.createElement(
-					// 		ImageCarousel, {
-					// 			itemImages: display_urls,
-					// 			itemName: element.node.shortcode
-					// 		}
-					// 	)
-					// )
 				);
 			});
 
