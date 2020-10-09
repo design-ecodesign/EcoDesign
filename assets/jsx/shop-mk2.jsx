@@ -119,11 +119,11 @@ function renderCart() {
 
 	}
 
-	console.log(currentCost);
+	// console.log(currentCost);
 	if (currentCost != 0) {
 		updateCost("total-cost-raw", previousCost, currentCost);
-		updateBadge();
 	}
+	updateBadge();
 	previousCost = currentCost;
 }
 
@@ -379,7 +379,7 @@ class Inventory extends React.Component {
 		}
 	}
 
-	xmlhttp.open("GET", "https://del.dog/raw/inventory-8-31-2020", false);
+	xmlhttp.open("GET", "https://del.dog/raw/inventory-8-31-2020", true);
 	// xmlhttp.open("GET", "assets/inventory-8-28-2020.json", true);
 
 	xmlhttp.send();
