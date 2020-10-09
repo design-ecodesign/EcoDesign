@@ -28,8 +28,16 @@
 	width: 400px;
 	height: 500px;
 }
-/* 
 
+.instagram-island img {
+	width: 350px;
+	height: 350px;
+	border-radius: 15px;
+	box-shadow: 1px 1px 3px black;
+}
+
+
+/* 
 .instagram-island .carousel.slide,
 .instagram-island .carousel.slide .carousel-inner,
 .instagram-island .carousel-item img {
