@@ -55,23 +55,6 @@
 		background-color: var(--eco-dark-green);
 	}
 
-/* #instagram-feed {
-	background-color: antiquewhite;
-	padding: 2%;
-}
-	#instagram-feed h3 {
-		font-size: 50px;
-		font-family: 'Montserrat', sans-serif;
-		color: var(--eco-dark-green);
-		padding: .8%;
-	}
-	#instagram-feed .content {
-		border-radius: 15px;
-		width: 100%;
-		height: 100%;
-		padding: 2%;
-	} */
-
 .wip {
 	background-color: rosybrown;
 	padding: 10%;
@@ -82,22 +65,8 @@
 	font-size: 75px;
 }
 
-.eapps-instagram-feed-posts-item-template-classic {
-	border-radius: 15px;
-	border: solid saddlebrown;
-}
-
-.eapps-instagram-feed-posts-item-text,
-.eapps-instagram-feed-posts-item-date {
-	font-weight: bold;
-}
-
-.eapps-instagram-feed-posts-item-image {
-	border-radius: 15px;
-}
-
 #what-we-do {
-	background-color: rgb(241, 228, 182);
+	background-color: var(--eco-orange);
 	padding: 2%;
 }
 	#what-we-do #we-do {
