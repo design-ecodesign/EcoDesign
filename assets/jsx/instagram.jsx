@@ -3,6 +3,8 @@
 var jsonData;
 var instagramData = [];
 
+class PostQuotaReached extends Error {}
+
 // Because Bootstrap's carousel wasn't good enough
 class InstagramPostCarousel extends React.Component {
 	render() {
@@ -87,26 +89,36 @@ class InstagramViewport extends React.Component {
 	xmlhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
 			jsonData = JSON.parse(this.responseText);
-			jsonData.graphql.user.edge_owner_to_timeline_media.edges.slice(0,4).forEach(element => {
-				let postedOn = null;
-				let urls = element.node.edge_sidecar_to_children.edges.map(_e => {
-					// return;
-					if (_e.node.is_video) {
-						return [_e.node.video_url, true];
-					} else {
-						if (!postedOn) {
-							const rawCaption = _e.node.accessibility_caption;
-							postedOn = rawCaption.match(/[A-Z]{1}[a-z]* [0-9]{2}, [0-9]{4}/);
-							// console.log("posted on "+ postedOn);
-						}
-						return [_e.node.display_url, false];
-					}
-				});
+			let postsParsed = 0;
 
-				instagramData.push(
-					<InstagramPost content={urls} postedOn={postedOn}></InstagramPost>
-				);
-			});
+			try {
+				jsonData.graphql.user.edge_owner_to_timeline_media.edges.forEach(element => {
+					if (postsParsed == 4){
+						throw PostQuotaReached;
+					}
+					try {
+						let postedOn = null;
+						let urls = element.node.edge_sidecar_to_children.edges.map(_e => {
+							// return;
+							if (_e.node.is_video) {
+								return [_e.node.video_url, true];
+							} else {
+								if (!postedOn) {
+									const rawCaption = _e.node.accessibility_caption;
+									postedOn = rawCaption.match(/[A-Z]{1}[a-z]* [0-9]{2}, [0-9]{4}/);
+									// console.log("posted on "+ postedOn);
+								}
+								return [_e.node.display_url, false];
+							}
+						});
+
+						instagramData.push(
+							<InstagramPost content={urls} postedOn={postedOn}></InstagramPost>
+						);
+						postsParsed += 1;
+					} catch (TypeError) {}
+				});
+			} catch (PostQuotaReached) {}
 
 			let instagramViewport = React.createElement("div", {className: "instagram-viewport"}, ...instagramData);
 			ReactDOM.render(instagramViewport, document.getElementById('instagram-drop-point'))
